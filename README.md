@@ -21,16 +21,17 @@ yarn add @jeoga/opttion
 #### How to USE
 ```javascript
 const _Option = require('@jeoga/option');
-let Option = new Option(args={
+let Option = new Option({
     db: <Mongo DB Instance>
 })
 Option.init()
 ```
+Note: Check **examples** how to pass Mongo DB Instance <br/>
+
 #### Get key value
 ```javascript
 Option.get('key', defaultValue=null)
 ```
-Note: Check **examples** how to pass Mongo DB Instance <br/>
 Returns **[Promise]&lt;[string]>** 
 
 #### Update key value
