@@ -2,8 +2,8 @@
 
 
 #### A Wordpress Like Option Module for Node.js
-Database Support: Mongodb
-Flexibilty: Can be used with any Node.js App and any kind of Node.js Framework
+- Database Support: Mongodb
+- Flexibilty: Can be used with any Node.js App and any kind of Node.js Framework
 
 ### Parameters
 -   `args` **[Object]** args
@@ -21,13 +21,16 @@ yarn add @jeoga/opttion
 #### How to USE
 ```javascript
 const _Option = require('@jeoga/option');
-let Option = new Option(args={})
+let Option = new Option(args={
+    db: <Mongo DB Instance>
+})
 Option.init()
 ```
 #### Get key value
 ```javascript
 Option.get('key', defaultValue=null)
 ```
+Note: Check **examples** how to pass Mongo DB Instance <br/>
 Returns **[Promise]&lt;[string]>** 
 
 #### Update key value
