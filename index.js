@@ -1,44 +1,23 @@
-// var express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 
-export default class Option {
+class Option {
 	constructor(args={}) {
-
 		Object.assign(this, {
 			db: null,
-			// eApp: express()
-		}, args)
-
-		// this.buildRoutes()
-
+        }, args)
+        
     }
     
     async init() {
-    	if(!this.db) {
-            console.log('NOT')
-    		await this.initDb()
-    	}
-
-		this.collection = this.db.collection('options');
-    	
-        // console.log('Option Init')
+        await this.initDb()
+        this.collection = this.db.collection('options');
     }
 
-    // buildRoutes() {
-    //     var router = express.Router();
-    //     var routerProtected = express.Router();
-
-    //     router.route('/').get((req,res,next) => {
-    //         res.send('Options Module Ok')
-    //     })
-
-    //     this.eApp.use('/option', router)
-    //     // eApp.use('/mg', [authMiddleware] ,routerProtected)
-    // }
-
     async initDb() {
-    	this.conn = await MongoClient.connect('mongodb://127.0.0.1:27017', { useNewUrlParser: true })
-		this.db = this.conn.db('jdb')
+        if(!this.db) {
+            this.conn = await MongoClient.connect('mongodb://127.0.0.1:27017', { useNewUrlParser: true, useUnifiedTopology: true })
+            this.db = this.conn.db('kneskdb')
+        }
     }
 
     async update(key, value) {
@@ -87,3 +66,5 @@ export default class Option {
         }
     }
 }
+
+module.exports = Option
