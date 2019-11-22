@@ -1,8 +1,8 @@
 {
-	"name": "option",
+	"name": "@kneskjs/option",
 	"version": "0.0.1",
 	"main": "index.js",
-	"author": "Aman Khanakia <aman@jeogaltd.com>",
+	"author": "Lucian Khanakia <lucian@knesk.com>",
 	"license": "MIT",
 	"description": "A Wordpress like option module for Mongodb in Javascript.",
 	"scripts": {
@@ -11,9 +11,9 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:jeoga/hook.git"
+		"url": "https://github.com/kneskjs/option.git"
 	},
-	"dependencies": {		
-		"mongodb": "^3.1.4"
+	"dependencies": {
+		"mongodb": "^3.3.4"
 	}
 }
